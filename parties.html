@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Parties Packages | GravityForce</title>
+  <meta name="description"
+    content="Host the ultimate active birthday party at GravityForce. Custom party rooms, pizza catering, jump passes, and dedicated hosts included.">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta name="keywords" content="trampoline, ninja warrior, birthday party, fun, entertainment">
+  <meta name="author" content="GravityForce">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Sticky Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link" id="logo-nav">
+        <div class="logo-icon">G</div>
+        <span>GravityForce<span class="logo-dot">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="dropdown">
+            <a href="index.html" class="nav-link dropdown-toggle">Home <span class="dropdown-arrow">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="index.html" class="dropdown-item">Home1</a></li>
+              <li><a href="index-2.html" class="dropdown-item">Home2</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="attractions.html" class="nav-link">Attractions</a></li>
+          <li><a href="ninja.html" class="nav-link">Ninja Course</a></li>
+          <li><a href="parties.html" class="nav-link active">Parties</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link ">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions (Theme Toggle, Auth CTA) -->
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle light/dark theme">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.071 7.071 5 5 0 01-7.071-7.071z" />
+          </svg>
+        </button>
+        <button class="rtl-toggle" id="rtlToggleBtn" aria-label="Toggle RTL layout" title="RTL Toggle">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </button>
+        <a href="dashboard.html" class="dashboard-icon" aria-label="Dashboard" title="Dashboard">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+          </svg>
+        </a>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false" id="hamburgerMenuBtn">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <a href="login.html" class="btn btn-secondary" id="loginBtn">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <nav>
+      <ul class="mobile-nav-menu">
+        <li><a href="index.html" class="mobile-nav-link">Home1</a></li>
+        <li><a href="index-2.html" class="mobile-nav-link">Home2</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="attractions.html" class="mobile-nav-link">Attractions</a></li>
+        <li><a href="ninja.html" class="mobile-nav-link">Ninja Course</a></li>
+        <li><a href="parties.html" class="mobile-nav-link active">Parties</a></li>
+        <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="mobile-nav-link ">Contact</a></li>
+        <li style="display: flex; gap: 1.5rem; align-items: center; margin-top: 1rem;">
+          <button class="theme-toggle" aria-label="Toggle light/dark theme"
+            style="background: none; border: none; color: var(--text-primary); cursor: pointer; padding: 0;">
+            <svg style="width:24px; height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.071 7.071 5 5 0 01-7.071-7.071z" />
+            </svg>
+          </button>
+          <button class="rtl-toggle" aria-label="Toggle RTL layout" title="RTL Toggle"
+            style="background: none; border: none; color: var(--text-primary); cursor: pointer; padding: 0;">
+            <svg style="width:24px; height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          </button>
+          <a href="dashboard.html" class="dashboard-icon" aria-label="Dashboard" title="Dashboard"
+            style="color: var(--text-primary); line-height: 0;">
+            <svg style="width:24px; height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+            </svg>
+          </a>
+        </li>
+        <li style="margin-top: 2rem;"><a href="login.html" class="btn btn-primary"
+            style="display: block; text-align: center;">Login</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Hero Section -->
+  <section
+    style="position: relative; overflow: hidden; padding: 2rem 1rem; background: var(--bg-primary); border-bottom: 1px solid var(--glass-border);">
+    <div class="container text-center" style="position: relative; z-index: 2;">
+      <span class="subheading">Party Central</span>
+      <h1>Birthday Party Packages</h1>
+      <p
+        style="margin-top: 1.5rem; font-size: 1.15rem; max-width: 700px; margin-left: auto; margin-right: auto; color: var(--text-secondary);">
+        Host a birthday they will never forget! All packages maintain equal heights and clear pricing variables.</p>
+    </div>
+  </section>
+
+  <!-- Party Packages Grid -->
+  <section style="padding: 2rem 1rem;">
+    <div class="container">
+      <div class="grid-3">
+        <!-- Neon Basic -->
+        <article class="premium-card">
+          <div class="card-content">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Ages
+              6+ | Up to 10 Kids</span>
+            <h3 class="card-title" style="margin-top: 0.5rem; font-weight:600;">Neon Starter Pack</h3>
+            <div style="margin: 1rem 0; font-family: var(--font-heading); font-size: 2.25rem; font-weight:700;">$249
+            </div>
+            <ul
+              style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; color: var(--text-secondary); flex-grow: 1; font-size: 0.9rem;">
+              <li>• 1.5 Hours Jump Access</li>
+              <li>• 30 Mins Private Party Room</li>
+              <li>• GravityForce Grip Socks (10x)</li>
+              <li>• 2 Fresh Pizzas + Soda</li>
+              <li>• Shared Event Coordinator helper</li>
+            </ul>
+            <div class="card-footer">
+              <a href="dashboard.html" class="btn btn-primary" style="width: 100%;">Book Starter Pack</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hyper Glow VIP -->
+        <article class="premium-card"
+          style="border: 2px solid var(--secondary); box-shadow: 0 10px 25px var(--secondary-glow);">
+          <div class="card-content">
+            <div style="display: flex; justify-content: space-between;">
+              <span
+                style="font-size: 0.8rem; font-weight: 700; color: var(--secondary); text-transform: uppercase;">Best
+                Seller</span>
+              <span
+                style="background-color: var(--secondary); color: var(--bg-primary); font-size: 0.75rem; font-weight:700; padding: 0.25rem 0.5rem; border-radius: var(--radius-sm);">VIP
+                GLOW</span>
+            </div>
+            <h3 class="card-title" style="margin-top: 0.5rem; font-weight: 600;">Hyper Glow VIP</h3>
+            <div
+              style="margin: 1rem 0; font-family: var(--font-heading); font-size: 2.25rem; font-weight:700; color: var(--secondary);">
+              $399</div>
+            <ul
+              style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; color: var(--text-secondary); flex-grow: 1; font-size: 0.9rem;">
+              <li>• 2 Hours Full Facility Access</li>
+              <li>• 45 Mins Private Glow Room</li>
+              <li>• GravityForce Grip Socks (15x)</li>
+              <li>• 4 Fresh Pizzas + Drinks</li>
+              <li>• Dedicated Personal Host</li>
+              <li>• VIP Guest Pass for birthday kid</li>
+            </ul>
+            <div class="card-footer">
+              <a href="dashboard.html" class="btn btn-accent" style="width: 100%;">Book VIP Pack</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mega Arena Takeover -->
+        <article class="premium-card">
+          <div class="card-content">
+            <span
+              style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Large
+              Groups | Up to 25 Kids</span>
+            <h3 class="card-title" style="margin-top: 0.5rem; font-weight:600;">Mega Takeover</h3>
+            <div style="margin: 1rem 0; font-family: var(--font-heading); font-size: 2.25rem; font-weight:700;">$699
+            </div>
+            <ul
+              style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; color: var(--text-secondary); flex-grow: 1; font-size: 0.9rem;">
+              <li>• 2 Hours Private Jump court reservation</li>
+              <li>• 1 Hour Luxury Lounge Access</li>
+              <li>• GravityForce Grip Socks (25x)</li>
+              <li>• 6 Fresh Pizzas + Wings + Soda</li>
+              <li>• 2 Dedicated Hosts for logistics</li>
+              <li>• custom T-Shirt for birthday host</li>
+            </ul>
+            <div class="card-footer">
+              <a href="dashboard.html" class="btn btn-primary" style="width: 100%;">Book Takeover</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Catering and Addons Split Section -->
+      <div class="grid-2" style="margin-top: 6rem; gap: 4rem;">
+        <div>
+          <span class="subheading">Custom Party Extras</span>
+          <h2>Party Add-ons & Catering</h2>
+          <p style="margin: 1.5rem 0;">Make your event completely custom with party upgrades. These can be selected
+            during checkout or edited later in your customer dashboard settings.</p>
+          <ul style="list-style: none; display:flex; flex-direction:column; gap:0.75rem; color: var(--text-secondary);">
+            <li>• <strong>Premium Pizza Upgrades</strong>: Gluten-free or customized toppings ($16 per pie)</li>
+            <li>• <strong>Unlimited Soda Refills</strong>: High-capacity dispensers for the party room ($29)</li>
+            <li>• <strong>Themed Room Decorations</strong>: Ninja, Glow Neon, or Galactic layouts ($49)</li>
+            <li>• <strong>Ice Cream & Cakes</strong>: Signature sheet cakes styled with customized names ($39)</li>
+            <li>• <strong>Extra Jump Socks</strong>: Available for parents and spectators ($3 per pair)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="glass-panel" style="padding: 2.5rem;">
+            <h3 style="margin-bottom: 1.5rem; font-weight: 600;">The Booking Process</h3>
+            <ol
+              style="display:flex; flex-direction:column; gap:1.25rem; color: var(--text-secondary); padding-left: 1.25rem;">
+              <li>
+                <strong>Choose a package:</strong><br>
+                Review starter, VIP, and Takeover tiers.
+              </li>
+              <li>
+                <strong>Select Date & Time:</strong><br>
+                Use the dashboard wizard to check availability live.
+              </li>
+              <li>
+                <strong>Add guests & waivers:</strong><br>
+                Send the waiver signature link to your guests prior to entry.
+              </li>
+              <li>
+                <strong>Deposit check-in:</strong><br>
+                Place a $150 refundable deposit to confirm your room space.
+              </li>
+            </ol>
+            <a href="dashboard.html" class="btn btn-primary" style="width:100%; margin-top:2rem;">Start Booking
+              Wizard</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section style="padding: 2rem 1rem; background: var(--bg-secondary); border-top: 1px solid var(--glass-border);">
+    <div class="container text-center">
+      <span class="subheading">Memories That Last</span>
+      <h2 style="margin-bottom: 1.5rem;">Parent Testimonials</h2>
+      <div class="grid-3" style="gap: 2rem; text-align: center;">
+        <div class="premium-card" style="padding: 1.5rem;">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+            alt="Sarah Jenkins"
+            style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem auto; border: 2px solid var(--secondary);">
+          <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1rem;">"The Hyper Glow VIP party
+            was incredible! The staff handled everything from the pizzas to the socks. I didn't have to stress at all."
+          </p>
+          <div style="font-weight: 600;">- Sarah Jenkins</div>
+        </div>
+        <div class="premium-card" style="padding: 1.5rem;">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+            alt="Michael Torres"
+            style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem auto; border: 2px solid var(--secondary);">
+          <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1rem;">"My son's 10th birthday at
+            GravityForce was a massive hit. The Dodgeball arena takeover gave them so much room to burn energy!"</p>
+          <div style="font-weight: 600;">- Michael Torres</div>
+        </div>
+        <div class="premium-card" style="padding: 1.5rem;">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="Emily Chen"
+            style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem auto; border: 2px solid var(--secondary);">
+          <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1rem;">"Booking online was super
+            easy. The private lounge access meant parents could relax while the kids played. Highly recommended."</p>
+          <div style="font-weight: 600;">- Emily Chen</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ CTA Section -->
+  <section style="padding: 2rem 1rem;">
+    <div class="container text-center">
+      <h2 style="margin-bottom: 1rem;">Party FAQ</h2>
+      <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto 2rem auto; font-size: 1.1rem;">Have
+        questions about bringing your own cake, adding more guests, or waiver policies? Our dedicated party hosts are
+        ready to help.</p>
+      <a href="contact.html" class="btn btn-primary" style="margin-bottom: 1rem;">Contact Event Coordinator</a>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-link">
+          <div class="logo-icon">G</div>
+          <span>GravityForce<span class="logo-dot">.</span></span>
+        </a>
+        <p class="footer-text">GravityForce is a leading sports entertainment park featuring elite trampoline jumps,
+          Ninja obstacles, high-end private birthday party rooms, and group events. Engineered for maximum fun under
+          safety protocols.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Facebook">F</a>
+          <a href="#" class="social-icon" aria-label="Instagram">I</a>
+          <a href="#" class="social-icon" aria-label="Twitter">T</a>
+          <a href="#" class="social-icon" aria-label="YouTube">Y</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About</a></li>
+
+
+          <li><a href="gallery.html" class="footer-link">Photo Gallery</a></li>
+          <li><a href="safety.html" class="footer-link">Safety & Rules</a></li>
+          <li><a href="faq.html" class="footer-link">FAQ Help</a></li>
+          <li><a href="blog.html" class="footer-link">Our Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Attractions</h4>
+        <ul class="footer-links">
+          <li><a href="attractions.html" class="footer-link">Open Jump Arena</a></li>
+          <li><a href="ninja.html" class="footer-link">Ninja Warrior Course</a></li>
+          <li><a href="attractions.html" class="footer-link">Dodgeball Arena</a></li>
+          <li><a href="attractions.html" class="footer-link">Foam Pit Diving</a></li>
+          <li><a href="attractions.html" class="footer-link">Slam Dunk Zones</a></li>
+          <li><a href="attractions.html" class="footer-link">Junior Kids Play</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Contact Information</h4>
+        <div class="footer-contact">
+          <div class="contact-item">
+            <span>📍</span>
+            <span>100 Gravity Heights Blvd,<br>Suite 400, Action City</span>
+          </div>
+          <div class="contact-item">
+            <span>📞</span>
+            <span>(555) 300-JUMP</span>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <span>info@gravityforce.com</span>
+          </div>
+          <div class="contact-item">
+            <span>🕒</span>
+            <span>Mon - Thu: 10:00 - 21:00<br>Fri - Sat: 09:00 - 23:00<br>Sun: 09:00 - 20:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 GravityForce Parks LLC. All rights reserved.</p>
+      <ul class="footer-legal-links">
+        <li><a href="safety.html" class="footer-legal-link">Privacy Policy</a></li>
+        <li><a href="safety.html" class="footer-legal-link">Terms of Service</a></li>
+        <li><a href="safety.html" class="footer-legal-link">Liability Waiver</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Scroll to top">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:24px; height:24px;">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

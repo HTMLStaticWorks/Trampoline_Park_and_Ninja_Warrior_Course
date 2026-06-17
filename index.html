@@ -1,1 +1,596 @@
-hello
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GravityForce | Premium Trampoline Park & Ninja Warrior Course</title>
+  <meta name="description"
+    content="Experience the ultimate sports entertainment venue with gravity-defying trampoline zones, challenging Ninja Warrior courses, premium birthday parties, and team building events.">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="shortcut icon" href="assets/img/favicon.svg">
+  <meta name="keywords" content="trampoline, ninja warrior, birthday party, fun, entertainment">
+  <meta name="author" content="GravityForce">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Sticky Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link" id="logo-nav">
+        <div class="logo-icon">G</div>
+        <span>GravityForce<span class="logo-dot">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="dropdown">
+            <a href="index.html" class="nav-link active dropdown-toggle">Home <span class="dropdown-arrow">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="index.html" class="dropdown-item active">Home 1</a></li>
+              <li><a href="index-2.html" class="dropdown-item">Home 2</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="attractions.html" class="nav-link">Attractions</a></li>
+          <li><a href="ninja.html" class="nav-link">Ninja Course</a></li>
+
+          <li><a href="parties.html" class="nav-link">Parties</a></li>
+
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions (Theme Toggle, Auth CTA) -->
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle light/dark theme">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.071 7.071 5 5 0 01-7.071-7.071z" />
+          </svg>
+        </button>
+        <button class="rtl-toggle" id="rtlToggleBtn" aria-label="Toggle RTL layout" title="RTL Toggle">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </button>
+        <a href="dashboard.html" class="dashboard-icon" aria-label="Dashboard" title="Dashboard">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+          </svg>
+        </a>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false" id="hamburgerMenuBtn">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <a href="login.html" class="btn btn-secondary" id="loginBtn">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <button id="closeMobileNav" class="close-menu" aria-label="Close Menu"
+      style="position: absolute; top: 1rem; right: 1.5rem; background: none; border: none; font-size: 1.5rem; color: var(--text-primary); cursor: pointer; padding: 0.5rem;">✕</button>
+
+
+    <nav>
+      <ul class="mobile-nav-menu">
+        <li><a href="index.html" class="mobile-nav-link active">Home1</a></li>
+        <li><a href="index-2.html" class="mobile-nav-link">Home2</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="attractions.html" class="mobile-nav-link">Attractions</a></li>
+        <li><a href="ninja.html" class="mobile-nav-link">Ninja Course</a></li>
+
+        <li><a href="parties.html" class="mobile-nav-link">Parties</a></li>
+
+        <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li style="display: flex; gap: 1.5rem; align-items: center; margin-top: 1rem;">
+          <button class="theme-toggle" aria-label="Toggle light/dark theme" style="background: none; border: none; color: var(--text-primary); cursor: pointer; padding: 0;">
+            <svg style="width:24px; height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.071 7.071 5 5 0 01-7.071-7.071z" />
+            </svg>
+          </button>
+          <button class="rtl-toggle" aria-label="Toggle RTL layout" title="RTL Toggle" style="background: none; border: none; color: var(--text-primary); cursor: pointer; padding: 0;">
+            <svg style="width:24px; height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          </button>
+          <a href="dashboard.html" class="dashboard-icon" aria-label="Dashboard" title="Dashboard" style="color: var(--text-primary); line-height: 0;">
+            <svg style="width:24px; height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+            </svg>
+          </a>
+        </li>
+        <li style="margin-top: 2rem;"><a href="login.html" class="btn btn-primary"
+            style="display: block; text-align: center;">Login</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="hero-section" data-aos="fade-up"
+    style="position: relative; overflow: hidden; padding: 4rem 1rem; background: url('assets/img/home1-hero.jpg') center/cover no-repeat; border-bottom: 1px solid var(--glass-border);"
+    aria-label="Introduction">
+    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.65); z-index: 1;">
+    </div>
+    <div class="container"
+      style="position: relative; z-index: 2; text-align: center; display: flex; flex-direction: column; align-items: center;">
+      <div class="animate-fade-in" style="width: 100%; max-width: 800px;">
+        <h1 style="margin-bottom: 1.5rem; color: #fff;">Jump Higher.<br>Train Harder.<br><span
+            class="text-gradient">Celebrate
+            Bigger.</span></h1>
+        <p
+          style="margin-bottom: 2.5rem; font-size: 1.15rem; max-width: 550px; color: #fff; margin-left: auto; margin-right: auto;">
+          Experience exciting
+          trampoline
+          attractions, challenging Ninja Warrior courses, birthday parties, and unforgettable events at our premium,
+          state-of-the-art facility.</p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+          <a href="dashboard.html" class="btn btn-accent" id="heroBookCTA">Book Jump Pass</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="statistics-section" data-aos="fade-up"
+    style="padding: 2rem 1rem; background-color: var(--bg-secondary); border-bottom: 1px solid var(--glass-border);"
+    aria-label="Key Facts">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number" data-target="250000" data-suffix="+">0</div>
+          <div class="stat-label">Annual Visitors</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="1800" data-suffix="+">0</div>
+          <div class="stat-label">Party Events Hosted</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="45" data-suffix="+">0</div>
+          <div class="stat-label">Ninja Obstacles</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="99" data-suffix="%">0</div>
+          <div class="stat-label">Safety Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section class="attractions-section" data-aos="fade-up" style="padding: 2rem 1rem;"
+    aria-label="Special Programs Grid">
+    <div class="container">
+      <div class="section-title-wrapper text-center" style="text-align: center;">
+        <span class="subheading">Exclusive Activities</span>
+        <h2>Our Special Programs</h2>
+        <p style="margin-top: 1rem;">Take your skills to the next level with our targeted classes, competitive leagues,
+          and specialized sessions.</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Ninja Academy -->
+        <article class="premium-card">
+          <div class="card-img-wrapper">
+            <img src="assets/img/academy.jpg" alt="Ninja Academy Training" class="card-img">
+            <span class="card-badge">Ages 8+</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Ninja Academy</h3>
+            <p class="card-description">Weekly training sessions led by pro athletes to conquer the warped wall and
+              improve obstacle course times.</p>
+            <div class="card-footer">
+              <a href="ninja.html" class="btn btn-secondary btn-sm" style="padding: 0.5rem 1rem;">Join Academy</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dodgeball League -->
+        <article class="premium-card">
+          <div class="card-img-wrapper">
+            <img src="assets/img/dodge.jpg" alt="Dodgeball Team League" class="card-img">
+            <span class="card-badge">Competitive</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Dodgeball League</h3>
+            <p class="card-description">Form a team and compete in our 6-week seasonal tournaments with cash prizes and
+              championship trophies.</p>
+            <div class="card-footer">
+              <a href="#" class="btn btn-secondary btn-sm" style="padding: 0.5rem 1rem;">Register Team</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Glow Night -->
+        <article class="premium-card">
+          <div class="card-img-wrapper">
+            <img src="assets/img/neon.jpg" alt="Glow Night Laser Lights" class="card-img">
+            <span class="card-badge">Weekends</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Neon Glow Nights</h3>
+            <p class="card-description">Every Friday & Saturday night, the lights go down and the lasers come on for an
+              epic dance and jump party.</p>
+            <div class="card-footer">
+              <a href="#" class="btn btn-secondary btn-sm" style="padding: 0.5rem 1rem;">Get VIP Access</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Birthday Party Section -->
+  <section class="birthday-party-section" data-aos="fade-up"
+    style="padding: 2rem 1rem; background-color: var(--bg-secondary); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);"
+    aria-label="Birthday Packages Callout">
+    <div class="container grid-2">
+      <div>
+        <span class="subheading">Party Headquarters</span>
+        <h2>Unforgettable Birthday Packages</h2>
+        <p style="margin: 1.5rem 0; font-size: 1.05rem;">Looking for the ultimate birthday party spot? Our venue
+          combines heart-pounding active fun with worry-free private party room packages, dedicated hosts, custom
+          catering options, and VIP perks.</p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2.5rem;">
+          <li style="display:flex; align-items:center; gap:0.75rem;"><span
+              style="color:var(--secondary); font-weight:bold;">✓</span> Private party rooms with digital control</li>
+          <li style="display:flex; align-items:center; gap:0.75rem;"><span
+              style="color:var(--secondary); font-weight:bold;">✓</span> Professional event hosts handling everything
+          </li>
+          <li style="display:flex; align-items:center; gap:0.75rem;"><span
+              style="color:var(--secondary); font-weight:bold;">✓</span> Customized premium catering & pizza plans</li>
+          <li style="display:flex; align-items:center; gap:0.75rem;"><span
+              style="color:var(--secondary); font-weight:bold;">✓</span> Free socks & premium VIP passes for the host
+          </li>
+        </ul>
+        <a href="parties.html" class="btn btn-primary" id="birthdayBookCTA">Book Your Party</a>
+      </div>
+      <div>
+        <div
+          style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=80"
+            alt="Decorated table inside private party birthday room event setup" class="card-img"
+            style="aspect-ratio: 4/3; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership Section -->
+  <section class="membership-section" data-aos="fade-up" style="padding: 2rem 1rem;" aria-label="Membership Tiers">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="subheading">Become a Member</span>
+        <h2>GravityForce VIP Memberships</h2>
+        <p style="margin-top: 1rem;">Unlock unlimited jump sessions, exclusive access times, special rates on parties,
+          and priority queues by joining our membership base.</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Monthly Pass -->
+        <article class="premium-card" style="border-color: var(--card-border);">
+          <div class="card-content" style="padding: 2.5rem 2rem;">
+            <span
+              style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Standard
+              Jumper</span>
+            <h3 class="card-title" style="margin-top: 0.5rem; font-weight: 600;">Monthly VIP</h3>
+            <div style="margin: 1.5rem 0; display:flex; align-items: baseline;">
+              <span
+                style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-heading);">$29</span>
+              <span style="color: var(--text-secondary); margin-left: 0.25rem;">/ month</span>
+            </div>
+            <ul
+              style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; color: var(--text-secondary); flex-grow: 1;">
+              <li>• 1-Hour Daily Jump Session</li>
+              <li>• 10% Discount on Birthdays</li>
+              <li>• Exclusive Member Socks Included</li>
+              <li>• Access to Member-Only Events</li>
+            </ul>
+            <a href="memberships.html" class="btn btn-secondary" style="width: 100%;">Buy Monthly Membership</a>
+          </div>
+        </article>
+
+        <!-- Quarterly Pass -->
+        <article class="premium-card"
+          style="border: 2px solid var(--secondary); transform: scale(1.03); box-shadow: 0 10px 25px var(--secondary-glow);">
+          <div class="card-content" style="padding: 2.5rem 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span
+                style="font-size: 0.8rem; font-weight: 700; color: var(--secondary); text-transform: uppercase;">Most
+                Popular</span>
+              <span
+                style="background-color: var(--secondary); color: var(--bg-primary); font-size: 0.75rem; font-weight:700; padding: 0.25rem 0.5rem; border-radius: var(--radius-sm);">BEST
+                VALUE</span>
+            </div>
+            <h3 class="card-title" style="margin-top: 0.5rem; font-weight: 600;">Quarterly VIP</h3>
+            <div style="margin: 1.5rem 0; display:flex; align-items: baseline;">
+              <span
+                style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-heading);">$79</span>
+              <span style="color: var(--text-secondary); margin-left: 0.25rem;">/ quarter</span>
+            </div>
+            <ul
+              style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; color: var(--text-secondary); flex-grow: 1;">
+              <li>• 2-Hour Daily Jump Session</li>
+              <li>• 15% Discount on Birthday Parties</li>
+              <li>• 1 Free Buddy Pass every month</li>
+              <li>• Fast-Track queue check-in lines</li>
+              <li>• Double Loyalty Points on food & drinks</li>
+            </ul>
+            <a href="memberships.html" class="btn btn-accent" style="width: 100%;">Buy Quarterly Membership</a>
+          </div>
+        </article>
+
+        <!-- Annual Pass -->
+        <article class="premium-card">
+          <div class="card-content" style="padding: 2.5rem 2rem;">
+            <span
+              style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Elite
+              Athlete</span>
+            <h3 class="card-title" style="margin-top: 0.5rem; font-weight: 600;">Annual VIP</h3>
+            <div style="margin: 1.5rem 0; display:flex; align-items: baseline;">
+              <span
+                style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-heading);">$249</span>
+              <span style="color: var(--text-secondary); margin-left: 0.25rem;">/ year</span>
+            </div>
+            <ul
+              style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; color: var(--text-secondary); flex-grow: 1;">
+              <li>• Unlimited Daily Jump Sessions</li>
+              <li>• 25% Discount on Birthday Parties</li>
+              <li>• 2 Free Buddy Passes every month</li>
+              <li>• VIP Lounge entry access</li>
+              <li>• Early access to new ninja obstacles</li>
+              <li>• Dedicated VIP check-in receptionist</li>
+            </ul>
+            <a href="memberships.html" class="btn btn-secondary" style="width: 100%;">Buy Annual Membership</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section" data-aos="fade-up"
+    style="padding: 2rem 1rem; background-color: var(--bg-secondary); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);"
+    aria-label="Customer Reviews">
+    <div class="container">
+      <div class="section-title-wrapper text-center" style="text-align: center;">
+        <span class="subheading">Jumper Reviews</span>
+        <h2>What Our Jumpers & Parents Say</h2>
+      </div>
+
+      <div class="grid-3">
+        <!-- Review 1 -->
+        <div class="testimonial-card premium-card"
+          style="padding: 2rem; display: flex; flex-direction: column; height: 100%;">
+          <p
+            style="font-size: 1.1rem; line-height: 1.7; font-style: italic; color: var(--text-primary); display: -webkit-box;  -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 1.5rem; flex-grow: 1;">
+            "We hosted
+            our son's 10th birthday party here and the experience was exceptional. The party host took care of every
+            detail, from the pizza to cake cutting, and the kids were absolute fans of the Ninja course!
+            "</p>
+          <div class="testimonial-author" style="margin-top: auto; display: flex; align-items: center; gap: 1rem;">
+            <div class="author-avatar"
+              style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80'); background-size: cover; width: 50px; height: 50px; border-radius: 50%;">
+            </div>
+            <div class="author-info">
+              <h4 style="margin: 0;">Sarah M.</h4>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;">Parent & Birthday Booker</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="testimonial-card premium-card"
+          style="padding: 2rem; display: flex; flex-direction: column; height: 100%;">
+          <p
+            style="font-size: 1.1rem; line-height: 1.7; font-style: italic; color: var(--text-primary); display: -webkit-box;  -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 1.5rem; flex-grow: 1;">
+            "As an
+            obstacle competitor, the Ninja Warrior setup is the best in the state. The layout features actual
+            competition difficulty levels, the padding is extremely safe, and the trainers are top tier."</p>
+          <div class="testimonial-author" style="margin-top: auto; display: flex; align-items: center; gap: 1rem;">
+            <div class="author-avatar"
+              style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80'); background-size: cover; width: 50px; height: 50px; border-radius: 50%;">
+            </div>
+            <div class="author-info">
+              <h4 style="margin: 0;">David R.</h4>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;">Ninja Fitness Member</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="testimonial-card premium-card"
+          style="padding: 2rem; display: flex; flex-direction: column; height: 100%;">
+          <p
+            style="font-size: 1.1rem; line-height: 1.7; font-style: italic; color: var(--text-primary); display: -webkit-box;  -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 1.5rem; flex-grow: 1;">
+            "The
+            quarterly membership has paid for itself multiple times over. My kids come 3 times a week, skip the main
+            entry lines with the fast-track lane, and earn loyalty points for free snacks."</p>
+          <div class="testimonial-author" style="margin-top: auto; display: flex; align-items: center; gap: 1rem;">
+            <div class="author-avatar"
+              style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80'); background-size: cover; width: 50px; height: 50px; border-radius: 50%;">
+            </div>
+            <div class="author-info">
+              <h4 style="margin: 0;">Jessica T.</h4>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;">Quarterly Jumper Family</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Preview -->
+  <section class="gallery-preview-section" data-aos="fade-up" style="padding: 2rem 1rem;"
+    aria-label="Photo Gallery Preview">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="subheading">Captured Fun</span>
+        <h2>High-Flying Gallery Preview</h2>
+        <p style="margin-top: 1rem;">Have a sneak peek at the dynamic action and premium safety layouts inside the park.
+          Click to open larger views.</p>
+      </div>
+
+      <div class="masonry-gallery">
+        <div class="gallery-item">
+          <img src="assets/img/img1.jpg" alt="Gymnast performing flip workout">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Acrobat Training Zone</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/img-2.jpg" alt="Ninja wall climbing hold workout close-up">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Ninja Climbing Grips</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/img-3.jpg" alt="Fitness instructor jump training center">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Strength Coaching</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/img4.jpg" alt="Fitness instructor jump training center">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Strength Coaching</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/img-5.jpg" alt="Fitness instructor jump training center">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Strength Coaching</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/img-6.jpg" alt="Fitness instructor jump training center">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Strength Coaching</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: 3rem;">
+        <a href="gallery.html" class="btn btn-secondary">View Complete Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call To Action Section -->
+  <section class="cta-section" data-aos="fade-up"
+    style="padding: 3rem 1rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-align: center; position: relative; overflow: hidden;"
+    aria-label="Book Now">
+    <div
+      style="position: absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle, rgba(0,0,0,0.15) 0%, transparent 80%);">
+    </div>
+    <div style="position: relative; z-index: 2; max-width: 700px; margin: 0 auto;">
+      <h2
+        style="color: white; font-size: clamp(2.25rem, 5vw, 3.25rem); font-family: var(--font-heading); font-weight: var(--weight-h2); line-height: 1.2; margin-bottom: 1.5rem;">
+        Ready To Jump Into The Action?</h2>
+      <p style="color: rgba(255,255,255,0.9); font-size: 1.15rem; margin-bottom: 2.5rem;">Buy your single session jump
+        pass online or lock in an epic birthday party package today.</p>
+      <div style="display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap;">
+        <a href="parties.html" class="btn glass-border-btn"
+          style="background-color: transparent; border-color: white; color: white;">Book A Birthday Party</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-link">
+          <div class="logo-icon">G</div>
+          <span>GravityForce<span class="logo-dot">.</span></span>
+        </a>
+        <p class="footer-text">GravityForce is a leading sports entertainment park featuring elite trampoline jumps,
+          Ninja obstacles, high-end private birthday party rooms, and group events. Engineered for maximum fun under
+          safety protocols.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Facebook">F</a>
+          <a href="#" class="social-icon" aria-label="Instagram">I</a>
+          <a href="#" class="social-icon" aria-label="Twitter">T</a>
+          <a href="#" class="social-icon" aria-label="YouTube">Y</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About</a></li>
+
+
+          <li><a href="gallery.html" class="footer-link">Photo Gallery</a></li>
+          <li><a href="safety.html" class="footer-link">Safety & Rules</a></li>
+          <li><a href="faq.html" class="footer-link">FAQ Help</a></li>
+          <li><a href="blog.html" class="footer-link">Our Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Attractions</h4>
+        <ul class="footer-links">
+          <li><a href="attractions.html" class="footer-link">Open Jump Arena</a></li>
+          <li><a href="ninja.html" class="footer-link">Ninja Warrior Course</a></li>
+          <li><a href="attractions.html" class="footer-link">Dodgeball Arena</a></li>
+          <li><a href="attractions.html" class="footer-link">Foam Pit Diving</a></li>
+          <li><a href="attractions.html" class="footer-link">Slam Dunk Zones</a></li>
+          <li><a href="attractions.html" class="footer-link">Junior Kids Play</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Contact Information</h4>
+        <div class="footer-contact">
+          <div class="contact-item">
+            <span>📍</span>
+            <span>100 Gravity Heights Blvd,<br>Suite 400, Action City</span>
+          </div>
+          <div class="contact-item">
+            <span>📞</span>
+            <span>(555) 300-JUMP</span>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <span>info@gravityforce.com</span>
+          </div>
+          <div class="contact-item">
+            <span>🕒</span>
+            <span>Mon - Thu: 10:00 - 21:00<br>Fri - Sat: 09:00 - 23:00<br>Sun: 09:00 - 20:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 GravityForce Parks LLC. All rights reserved.</p>
+      <ul class="footer-legal-links">
+        <li><a href="safety.html" class="footer-legal-link">Privacy Policy</a></li>
+        <li><a href="safety.html" class="footer-legal-link">Terms of Service</a></li>
+        <li><a href="safety.html" class="footer-legal-link">Liability Waiver</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Scroll to top">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:24px; height:24px;">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

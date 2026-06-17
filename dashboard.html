@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard | GravityForce</title>
+  <meta name="description"
+    content="Manage your jump passes, sign digital liability waivers, book birthday party packages, and manage your VIP membership details online.">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta name="keywords" content="trampoline, ninja warrior, birthday party, fun, entertainment">
+  <meta name="author" content="GravityForce">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Main Dashboard Grid Layout -->
+  <main class="dashboard-container">
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar" aria-label="Dashboard Menu" id="dashboardSidebar">
+      <button id="closeDashboardNav" class="close-menu" aria-label="Close Menu" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; color: var(--text-primary); cursor: pointer; padding: 0.5rem; display: none;">✕</button>
+      
+      <!-- Desktop Logo -->
+      <a href="index.html" class="logo-link desktop-only-logo" style="margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: var(--weight-h2); font-size: 1.5rem; color: var(--text-primary); text-decoration: none;">
+        <div class="logo-icon" style="width: 36px; height: 36px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800;">G</div>
+        <span>GravityForce<span class="logo-dot" style="color: var(--secondary);">.</span></span>
+      </a>
+
+      <nav aria-label="Dashboard Navigation">
+        <ul class="dashboard-menu">
+          <li>
+            <a href="#" class="dashboard-menu-link active" data-section="dash-home">
+              <span>🏠</span> Dashboard Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="dashboard-menu-link" data-section="dash-waivers">
+              <span>✍️</span> Digital Waivers
+            </a>
+          </li>
+          <li>
+            <a href="#" class="dashboard-menu-link" data-section="dash-parties">
+              <span>🎈</span> Party Bookings
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="dashboard-menu-link" data-section="dash-settings">
+              <span>⚙️</span> Profile Settings
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Actions (Inside Hamburger, After Menu) -->
+      <div class="mobile-only-actions" style="display: none; flex-direction: column; gap: 1rem; margin-top: 2rem;">
+        <div class="dashboard-user-card" style="padding: 0.5rem 1rem; background: var(--glass-bg); border-radius: var(--radius-md); border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
+          <div class="dashboard-user-avatar" id="avatar-letters-mob" style="width: 36px; height: 36px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">AJ</div>
+          <div class="dashboard-user-info" style="display: flex; flex-direction: column;">
+            <h4 id="sidebar-user-name-mob" style="margin: 0; font-size: 0.9rem;">Alex Jumpmaster</h4>
+            <a href="index.html" onclick="localStorage.removeItem('gravity_db');" style="font-size: 0.75rem; color: var(--danger); text-decoration: none;">Log Out</a>
+          </div>
+        </div>
+        <div style="display: flex; gap: 1rem;">
+          <button class="theme-toggle" aria-label="Toggle light/dark theme" style="background: none; border: 1px solid var(--glass-border); color: var(--text-primary); cursor: pointer; border-radius: var(--radius-md); padding: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.071 7.071 5 5 0 01-7.071-7.071z" />
+            </svg>
+          </button>
+          <button class="rtl-toggle" aria-label="Toggle RTL layout" title="RTL Toggle" style="background: none; border: 1px solid var(--glass-border); color: var(--text-primary); cursor: pointer; border-radius: var(--radius-md); padding: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Dashboard Content Area -->
+    <section class="dashboard-content" data-aos="fade-up" aria-label="Dashboard Content Area">
+      
+      <!-- Dashboard Mobile Header (Logo & Hamburger) -->
+      <div class="dashboard-mobile-header" style="display: none; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <a href="index.html" class="logo-link" style="display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: var(--weight-h2); font-size: 1.25rem; color: var(--text-primary); text-decoration: none;">
+          <div class="logo-icon" style="width: 32px; height: 32px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800;">G</div>
+          <span>GravityForce<span class="logo-dot" style="color: var(--secondary);">.</span></span>
+        </a>
+        <button class="hamburger dashboard-hamburger" id="dashboardHamburger" aria-label="Open Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Top Right Header Actions (Desktop Only) -->
+      <div class="dashboard-desktop-header" style="display: flex; justify-content: flex-end; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+        <button class="theme-toggle" aria-label="Toggle light/dark theme" style="background: none; border: 1px solid var(--glass-border); color: var(--text-primary); cursor: pointer; border-radius: var(--radius-md); padding: 0.5rem; display: flex; align-items: center; justify-content: center;">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.071 7.071 5 5 0 01-7.071-7.071z" />
+          </svg>
+        </button>
+        <button class="rtl-toggle" aria-label="Toggle RTL layout" title="RTL Toggle" style="background: none; border: 1px solid var(--glass-border); color: var(--text-primary); cursor: pointer; border-radius: var(--radius-md); padding: 0.5rem; display: flex; align-items: center; justify-content: center;">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </button>
+        <div class="dashboard-user-card" style="margin-bottom: 0; padding: 0.5rem 1rem; background: var(--glass-bg); border-radius: var(--radius-md); border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
+          <div class="dashboard-user-avatar" id="avatar-letters" style="width: 36px; height: 36px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">AJ</div>
+          <div class="dashboard-user-info" style="display: flex; flex-direction: column;">
+            <h4 id="topbar-user-name" style="margin: 0; font-size: 0.9rem;">Alex Jumpmaster</h4>
+            <a href="index.html" onclick="localStorage.removeItem('gravity_db');" style="font-size: 0.75rem; color: var(--danger); text-decoration: none;">Log Out</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBSECTION: HOME -->
+      <div class="dashboard-section active" id="dash-home">
+        <div style="margin-bottom: 2.5rem;">
+          <span class="subheading">Jumper Portal</span>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <h2 style="margin: 0;">Welcome back, <span id="welcome-user-name" class="text-gradient">Alex Jumpmaster</span>!</h2>
+            <div style="position: relative; cursor: pointer; color: var(--text-primary);">
+              <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
+              <span style="position: absolute; top: 0; right: 2px; width: 8px; height: 8px; background-color: var(--danger); border-radius: 50%; border: 2px solid var(--bg-primary);"></span>
+            </div>
+          </div>
+          <p style="margin-top: 0.25rem;">Manage your active tickets, safety check waivers, and loyalty reward benefits.
+          </p>
+        </div>
+
+        <!-- Loyalty Points, Active Membership, and Waiver status badges -->
+        <div class="dash-stats">
+          <div class="dash-stat-card">
+            <span class="dash-stat-label">Loyalty Balance</span>
+            <div class="dash-stat-val" id="home-loyalty-points">350 pts</div>
+            <span style="font-size: 0.75rem; color: var(--success); font-weight: 600;">+50 points next jump</span>
+          </div>
+          <div class="dash-stat-card" style="position: relative;">
+            <span class="dash-stat-label">Liability Waiver</span>
+            <div id="home-waiver-status" class="card-badge"
+              style="position: static; margin-top: 0.5rem; display: inline-block; width: max-content;">Active / Signed
+            </div>
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: auto;">Valid until June 2027</span>
+          </div>
+          <div class="dash-stat-card">
+            <span class="dash-stat-label">Membership Tier</span>
+            <div style="font-size: 1.15rem; font-weight: 700; color: var(--secondary); margin-top: 0.25rem;"
+              id="home-membership-tier">Quarterly VIP</div>
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: auto;"
+              id="home-membership-date">Renews: 2026-09-16</span>
+          </div>
+        </div>
+
+        <!-- Upcoming Bookings Panel -->
+        <div class="glass-panel" style="padding: 2.5rem; margin-bottom: 3rem;">
+          <h3
+            style="margin-bottom: 1.5rem; font-weight: 600; display:flex; justify-content:space-between; align-items:center;">
+            <span>Upcoming Active Passes</span>
+            <button class="btn btn-secondary" onclick="document.querySelector('[data-section=\'dash-passes\']').click()"
+              style="padding:0.4rem 1rem; font-size:0.8rem;">Book New Session</button>
+          </h3>
+          <div id="home-upcoming-bookings">
+            <!-- Dynamic bookings rendered by dashboard.js -->
+          </div>
+        </div>
+
+        <!-- Recent Purchases Table -->
+        <div class="glass-panel" style="padding: 2.5rem;">
+          <h3 style="margin-bottom: 1.5rem; font-weight: 600;">Recent Transactions</h3>
+          <div class="pricing-table-wrapper" style="margin: 0; border: none; box-shadow: none;">
+            <table class="pricing-table">
+              <thead>
+                <tr>
+                  <th>Transaction ID</th>
+                  <th>Description</th>
+                  <th>Date Purchased</th>
+                  <th>Total Price</th>
+                </tr>
+              </thead>
+              <tbody id="home-recent-purchases">
+                <!-- Dynamic purchases rendered by dashboard.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBSECTION: WAIVERS -->
+      <div class="dashboard-section" id="dash-waivers">
+        <div style="margin-bottom: 2.5rem;">
+          <h2>Digital Liability Waiver</h2>
+          <p style="color: var(--text-secondary);">Sign liability release forms prior to arrival at GravityForce.</p>
+        </div>
+
+        <!-- Status Box -->
+        <div id="waiver-status-text"></div>
+
+        <!-- Signing Form Canvas -->
+        <form id="sign-waiver-form" class="glass-panel" style="padding: 2.5rem;">
+          <h3 style="margin-bottom: 1rem; font-weight:600;">Liability Waiver Signing Pad</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+            By signing below, you agree that you have read the GravityForce safety rules, ASTM guidelines, and accept
+            all risks associated with trampoline acrobatics and obstacle courses.
+          </p>
+
+          <div class="form-group" style="display:flex; align-items:flex-start; gap:0.75rem; margin-bottom:1.5rem;">
+            <input type="checkbox" id="accept-liability-terms"
+              style="margin-top: 0.25rem; accent-color: var(--secondary);">
+            <label for="accept-liability-terms"
+              style="font-size: 0.85rem; color: var(--text-primary); cursor: pointer;">
+              I explicitly accept the Terms of Service and Liability Waiver guidelines.
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Sign below using mouse pointer or touch screen:</label>
+            <div class="signature-canvas-container">
+              <button type="button" id="clear-sig" class="signature-clear" aria-label="Clear signature pad">Clear
+                Pad</button>
+              <canvas id="signature-canvas" class="signature-canvas"></canvas>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">Save & Submit Digital
+            Waiver</button>
+        </form>
+
+        <!-- Signed view panel -->
+        <div id="signed-waiver-panel" class="glass-panel" style="padding: 2.5rem; display: none;">
+          <h3 style="margin-bottom: 1.5rem; font-weight:600;">Your Signed Waiver Details</h3>
+          <div id="signed-details-text" style="line-height: 2; margin-bottom: 2rem;">
+            <!-- Rendered by js -->
+          </div>
+          <div style="margin-bottom: 2rem;">
+            <p class="form-label">Your Digital Signature on File:</p>
+            <div
+              style="border: 1px solid var(--glass-border); padding: 1rem; background-color: rgba(255,255,255,0.05); display: inline-block; border-radius: var(--radius-md);">
+              <img id="download-signature-img" src="" alt="Signed Signature View"
+                style="max-height: 80px; display: none;">
+            </div>
+          </div>
+          <div style="display:flex; gap:1rem;">
+            <button class="btn btn-secondary" onclick="alert('PDF waiver generated. Download started!')">Download Signed
+              Waiver PDF</button>
+            <button class="btn btn-secondary" id="reset-waiver-btn"
+              style="border-color: var(--danger); color: var(--danger);">Revoke Waiver (Test Workflow)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBSECTION: PARTIES -->
+      <div class="dashboard-section" id="dash-parties">
+        <div style="margin-bottom: 2.5rem;">
+          <h2>Book a Birthday Party Room</h2>
+          <p style="color: var(--text-secondary);">Reserve private themed birthday rooms with dedicated staff.</p>
+        </div>
+
+        <!-- Party Booking form -->
+        <div class="glass-panel" style="padding: 2.5rem; margin-bottom: 3rem;">
+          <h3 style="margin-bottom: 1.5rem; font-weight: 600;">Party Reservation Details</h3>
+          <form id="book-party-form">
+            <div class="grid-2" style="gap: 1.5rem;">
+              <div class="form-group">
+                <label for="party-pack-select" class="form-label">Select Birthday Package</label>
+                <select id="party-pack-select" class="form-control">
+                  <option>Neon Starter Pack ($249)</option>
+                  <option>Hyper Glow VIP ($399)</option>
+                  <option>Mega Takeover ($699)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="party-guests" class="form-label">Estimated Guest Count</label>
+                <select id="party-guests" class="form-control">
+                  <option>10</option>
+                  <option>15</option>
+                  <option>20</option>
+                  <option>25+</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid-2" style="gap: 1.5rem; margin-top: 0.5rem;">
+              <div class="form-group">
+                <label for="party-date" class="form-label">Event Date</label>
+                <input type="date" id="party-date" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="party-time" class="form-label">Preferred Time Slot</label>
+                <select id="party-time" class="form-control">
+                  <option>10:00 - 12:30</option>
+                  <option>13:00 - 15:30</option>
+                  <option>16:00 - 18:30</option>
+                  <option>19:00 - 21:30</option>
+                </select>
+              </div>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem; margin-top: 0.5rem;">Note:
+              Room booking requires a $150 deposit charge. Balance is billed post-event.</p>
+            <button type="submit" class="btn btn-accent" style="width: 100%;">Book Room & Pay Deposit</button>
+          </form>
+        </div>
+
+        <!-- Active Party Bookings -->
+        <div class="glass-panel" style="padding: 2.5rem;">
+          <h3 style="margin-bottom: 1.5rem; font-weight: 600;">Your Reserved Party Rooms</h3>
+          <div id="party-history-list" style="display: flex; flex-direction: column; gap: 1rem;">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBSECTION: SETTINGS -->
+      <div class="dashboard-section" id="dash-settings">
+        <div style="margin-bottom: 2.5rem;">
+          <h2>Profile Settings</h2>
+          <p style="color: var(--text-secondary);">Update profile fields, passwords, and emergency details.</p>
+        </div>
+
+        <div class="grid-2" style="gap: 3rem; align-items: start;">
+          <!-- Save details form -->
+          <form id="profile-settings-form" class="glass-panel" style="padding: 2.5rem;">
+            <h3 style="margin-bottom: 1.5rem; font-weight: 600;">Account Details</h3>
+            <div class="form-group">
+              <label for="profile-name" class="form-label">Full Name</label>
+              <input type="text" id="profile-name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="profile-email" class="form-label">Email Address</label>
+              <input type="email" id="profile-email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="profile-phone" class="form-label">Phone Number</label>
+              <input type="text" id="profile-phone" class="form-control" required>
+            </div>
+
+            <h3 style="margin-top: 2rem; margin-bottom: 1.25rem; font-weight: 600;">Emergency Contacts</h3>
+            <div class="form-group">
+              <label for="profile-emergency-name" class="form-label">Contact Person Name</label>
+              <input type="text" id="profile-emergency-name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="profile-emergency-phone" class="form-label">Contact Phone Number</label>
+              <input type="text" id="profile-emergency-phone" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Save Profile
+              Settings</button>
+          </form>
+
+          <!-- Password change placeholder -->
+          <div class="glass-panel" style="padding: 2.5rem;">
+            <h3 style="margin-bottom: 1.5rem; font-weight: 600;">Update Password</h3>
+            <form onsubmit="event.preventDefault(); alert('Password updated successfully!'); this.reset();">
+              <div class="form-group">
+                <label for="current-pwd" class="form-label">Current Password</label>
+                <input type="password" id="current-pwd" class="form-control" placeholder="••••••••" required>
+              </div>
+              <div class="form-group">
+                <label for="new-pwd" class="form-label">New Password</label>
+                <input type="password" id="new-pwd" class="form-control" placeholder="••••••••" required>
+              </div>
+              <div class="form-group">
+                <label for="confirm-pwd" class="form-label">Confirm New Password</label>
+                <input type="password" id="confirm-pwd" class="form-control" placeholder="••••••••" required>
+              </div>
+              <button type="submit" class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem;">Change
+                Password</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Scroll to top">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:24px; height:24px;">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

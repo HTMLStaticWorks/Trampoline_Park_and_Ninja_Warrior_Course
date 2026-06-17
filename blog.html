@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports & Fitness Blog | GravityForce</title>
+  <meta name="description" content="Read training guides, youth fitness tips, party hosting advice, and park updates from the experts at GravityForce.">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta name="keywords" content="trampoline, ninja warrior, birthday party, fun, entertainment">
+  <meta name="author" content="GravityForce">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <div class="logo-icon">G</div>
+        <span>GravityForce<span class="logo-dot">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="dropdown">
+            <a href="index.html" class="nav-link dropdown-toggle">Home <span class="dropdown-arrow">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="index.html" class="dropdown-item">Home 1</a></li>
+              <li><a href="index.html" class="dropdown-item">Home 2</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="attractions.html" class="nav-link">Attractions</a></li>
+          <li><a href="ninja.html" class="nav-link">Ninja Course</a></li>
+          
+          <li><a href="parties.html" class="nav-link">Parties</a></li>
+          
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="safety.html" class="nav-link">Safety & Rules</a></li>
+          <li><a href="blog.html" class="nav-link active">Blog</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle light/dark theme">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.071 7.071 5 5 0 01-7.071-7.071z" />
+          </svg>
+        </button>
+        <button class="rtl-toggle" id="rtlToggleBtn" aria-label="Toggle RTL layout" title="RTL Toggle">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </button>
+        <a href="dashboard.html" class="dashboard-icon" aria-label="Dashboard" title="Dashboard">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+          </svg>
+        </a>
+        <a href="login.html" class="btn btn-secondary">Login</a>
+        <a href="dashboard.html" class="btn btn-primary">Book Jump Pass</a>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false" id="hamburgerMenuBtn">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <nav>
+      <ul class="mobile-nav-menu">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="attractions.html" class="mobile-nav-link">Attractions</a></li>
+        <li><a href="ninja.html" class="mobile-nav-link">Ninja Course</a></li>
+        
+        <li><a href="parties.html" class="mobile-nav-link">Parties</a></li>
+        
+        <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+        <li><a href="safety.html" class="mobile-nav-link">Safety</a></li>
+        <li><a href="blog.html" class="mobile-nav-link active">Blog</a></li>
+        <li style="margin-top: 2rem;"><a href="login.html" class="btn btn-primary" style="display: block; text-align: center;">Member Dashboard</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Hero Section -->
+  <section style="position: relative; overflow: hidden; padding: 5rem 2rem; background: linear-gradient(135deg, hsl(225, 25%, 6%) 40%, rgba(139, 92, 246, 0.1) 100%); border-bottom: 1px solid var(--glass-border);">
+    <div class="container text-center" style="position: relative; z-index: 2;">
+      <span class="subheading">Read Our News</span>
+      <h1>GravityForce Fitness Blog</h1>
+      <p style="margin-top: 1.5rem; font-size: 1.15rem; max-width: 700px; margin-left: auto; margin-right: auto; color: var(--text-secondary);">Expert training tips, acrobatic guides, and event hosting tips curated by our coaches.</p>
+    </div>
+  </section>
+
+  <!-- Blog Cards Grid -->
+  <section style="padding: 6rem 2rem;">
+    <div class="container">
+      <div class="grid-3">
+        
+        <!-- Post 1 -->
+        <article class="premium-card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=80" alt="Ninja wall climbing hold training" class="card-img">
+            <span class="card-badge">Obstacle Guide</span>
+          </div>
+          <div class="card-content">
+            <span style="font-size: 0.8rem; color: var(--secondary); font-weight:700;">JUNE 12, 2026 | COACH MARCUS</span>
+            <h3 class="card-title" style="margin-top: 0.5rem; font-weight:600;">5 Tips for Mastering the Warped Wall</h3>
+            <p class="card-description">Struggling to clear the final ledge of the Warped Wall? Learn the science of sprint acceleration, step-offset anchors, and wrist snap techniques to scale it every time.</p>
+            <div class="card-footer">
+              <a href="#" onclick="alert('Full blog post is coming soon! Thank you for reading.')" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Read Article</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="premium-card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1519766304817-4f37bda74a27?auto=format&fit=crop&w=500&q=80" alt="Kids party balloons room" class="card-img">
+            <span class="card-badge">Party Planning</span>
+          </div>
+          <div class="card-content">
+            <span style="font-size: 0.8rem; color: var(--secondary); font-weight:700;">MAY 28, 2026 | EVENTS TEAM</span>
+            <h3 class="card-title" style="margin-top: 0.5rem; font-weight:600;">Host a Hassle-Free Birthday Party</h3>
+            <p class="card-description">Hosting a birthday party for active kids doesn't have to be stressful. Follow our timeline planner to coordinate pizza catering, digital guest waivers, and goody bags smoothly.</p>
+            <div class="card-footer">
+              <a href="#" onclick="alert('Full blog post is coming soon! Thank you for reading.')" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Read Article</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="premium-card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=500&q=80" alt="Trampoline jumper training core strength" class="card-img">
+            <span class="card-badge">Health & Cardio</span>
+          </div>
+          <div class="card-content">
+            <span style="font-size: 0.8rem; color: var(--secondary); font-weight:700;">APRIL 14, 2026 | COACH SARAH</span>
+            <h3 class="card-title" style="margin-top: 0.5rem; font-weight:600;">The Science of Trampoline Fitness</h3>
+            <p class="card-description">Trampoline bouncing (rebounding) burns up to 60% more calories than jogging, while protecting your ankles, knees, and hips from hard impacts. Read the research data inside.</p>
+            <div class="card-footer">
+              <a href="#" onclick="alert('Full blog post is coming soon! Thank you for reading.')" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Read Article</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-link">
+          <div class="logo-icon">G</div>
+          <span>GravityForce<span class="logo-dot">.</span></span>
+        </a>
+        <p class="footer-text">GravityForce is a leading sports entertainment park featuring elite trampoline jumps, Ninja obstacles, high-end private birthday party rooms, and group events. Engineered for maximum fun under safety protocols.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Facebook">F</a>
+          <a href="#" class="social-icon" aria-label="Instagram">I</a>
+          <a href="#" class="social-icon" aria-label="Twitter">T</a>
+          <a href="#" class="social-icon" aria-label="YouTube">Y</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About</a></li>
+          
+          
+          <li><a href="gallery.html" class="footer-link">Photo Gallery</a></li>
+          <li><a href="safety.html" class="footer-link">Safety & Rules</a></li>
+          <li><a href="faq.html" class="footer-link">FAQ Help</a></li>
+          <li><a href="blog.html" class="footer-link">Our Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Attractions</h4>
+        <ul class="footer-links">
+          <li><a href="attractions.html" class="footer-link">Open Jump Arena</a></li>
+          <li><a href="ninja.html" class="footer-link">Ninja Warrior Course</a></li>
+          <li><a href="attractions.html" class="footer-link">Dodgeball Arena</a></li>
+          <li><a href="attractions.html" class="footer-link">Foam Pit Diving</a></li>
+          <li><a href="attractions.html" class="footer-link">Slam Dunk Zones</a></li>
+          <li><a href="attractions.html" class="footer-link">Junior Kids Play</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Contact Information</h4>
+        <div class="footer-contact">
+          <div class="contact-item">
+            <span>📍</span>
+            <span>100 Gravity Heights Blvd,<br>Suite 400, Action City</span>
+          </div>
+          <div class="contact-item">
+            <span>📞</span>
+            <span>(555) 300-JUMP</span>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <span>info@gravityforce.com</span>
+          </div>
+          <div class="contact-item">
+            <span>🕒</span>
+            <span>Mon - Thu: 10:00 - 21:00<br>Fri - Sat: 09:00 - 23:00<br>Sun: 09:00 - 20:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 GravityForce Parks LLC. All rights reserved.</p>
+      <ul class="footer-legal-links">
+        <li><a href="safety.html" class="footer-legal-link">Privacy Policy</a></li>
+        <li><a href="safety.html" class="footer-legal-link">Terms of Service</a></li>
+        <li><a href="safety.html" class="footer-legal-link">Liability Waiver</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Scroll to top">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:24px; height:24px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+  </button>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

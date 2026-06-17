@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | GravityForce</title>
+  <meta name="description"
+    content="Get in touch with GravityForce. Find our phone number, email, park address, hours of operation, and submission contact form.">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta name="keywords" content="trampoline, ninja warrior, birthday party, fun, entertainment">
+  <meta name="author" content="GravityForce">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Sticky Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link" id="logo-nav">
+        <div class="logo-icon">G</div>
+        <span>GravityForce<span class="logo-dot">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="dropdown">
+            <a href="index.html" class="nav-link dropdown-toggle">Home <span class="dropdown-arrow">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="index.html" class="dropdown-item">Home 1</a></li>
+              <li><a href="index.html" class="dropdown-item">Home 2</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="attractions.html" class="nav-link">Attractions</a></li>
+          <li><a href="ninja.html" class="nav-link">Ninja Course</a></li>
+          <li><a href="parties.html" class="nav-link">Parties</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions (Theme Toggle, Auth CTA) -->
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle light/dark theme">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.071 7.071 5 5 0 01-7.071-7.071z" />
+          </svg>
+        </button>
+        <button class="rtl-toggle" id="rtlToggleBtn" aria-label="Toggle RTL layout" title="RTL Toggle">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </button>
+        <a href="dashboard.html" class="dashboard-icon" aria-label="Dashboard" title="Dashboard">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+          </svg>
+        </a>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false" id="hamburgerMenuBtn">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <a href="login.html" class="btn btn-secondary" id="loginBtn">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <nav>
+      <ul class="mobile-nav-menu">
+        <li><a href="index.html" class="mobile-nav-link">Home1</a></li>
+        <li><a href="index-2.html" class="mobile-nav-link">Home2</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="attractions.html" class="mobile-nav-link">Attractions</a></li>
+        <li><a href="ninja.html" class="mobile-nav-link">Ninja Course</a></li>
+        <li><a href="parties.html" class="mobile-nav-link">Parties</a></li>
+        <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="mobile-nav-link active">Contact</a></li>
+        <li style="display: flex; gap: 1.5rem; align-items: center; margin-top: 1rem;">
+          <button class="theme-toggle" aria-label="Toggle light/dark theme"
+            style="background: none; border: none; color: var(--text-primary); cursor: pointer; padding: 0;">
+            <svg style="width:24px; height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.071 7.071 5 5 0 01-7.071-7.071z" />
+            </svg>
+          </button>
+          <button class="rtl-toggle" aria-label="Toggle RTL layout" title="RTL Toggle"
+            style="background: none; border: none; color: var(--text-primary); cursor: pointer; padding: 0;">
+            <svg style="width:24px; height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          </button>
+          <a href="dashboard.html" class="dashboard-icon" aria-label="Dashboard" title="Dashboard"
+            style="color: var(--text-primary); line-height: 0;">
+            <svg style="width:24px; height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+            </svg>
+          </a>
+        </li>
+        <li style="margin-top: 2rem;"><a href="login.html" class="btn btn-primary"
+            style="display: block; text-align: center;">Login</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Hero Section -->
+  <section
+    style="position: relative; overflow: hidden; padding: 3rem 2rem; background: var(--bg-primary); border-bottom: 1px solid var(--glass-border);">
+    <div class="container text-center" style="position: relative; z-index: 2;">
+      <span class="subheading">Get In Touch</span>
+      <h1>Contact GravityForce</h1>
+      <p
+        style="margin-top: 1.5rem; font-size: 1.15rem; max-width: 700px; margin-left: auto; margin-right: auto; color: var(--text-secondary);">
+        Connect with our customer support teams, event hosts, and coaching supervisors.</p>
+    </div>
+  </section>
+
+  <!-- Contact Grid Section -->
+  <section style="padding: 3rem 2rem;">
+    <div class="container">
+      <div class="grid-2" style="gap: 4rem; align-items: start; margin-bottom: 4rem;">
+        <!-- Contact details -->
+        <div>
+          <h2 style="margin-bottom: 2rem;">How to Find Us</h2>
+          <div class="grid-2" style="gap: 1.5rem; margin-bottom: 3rem;">
+            <div class="premium-card">
+              <div class="card-content" style="padding: 1.5rem;">
+                <div style="margin-bottom: 0.5rem; color: var(--secondary);">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </div>
+                <h4 style="margin-bottom: 0.25rem;">Call Us</h4>
+                <p style="font-size: 0.9rem;">(555) 300-JUMP</p>
+              </div>
+            </div>
+            <div class="premium-card">
+              <div class="card-content" style="padding: 1.5rem;">
+                <div style="margin-bottom: 0.5rem; color: var(--secondary);">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <h4 style="margin-bottom: 0.25rem;">Email Support</h4>
+                <p style="font-size: 0.9rem;">info@gravityforce.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel" style="padding: 2rem; margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 1rem; font-weight:600;">Business Hours</h3>
+            <ul
+              style="list-style: none; display:flex; flex-direction:column; gap:0.5rem; color: var(--text-secondary); font-size: 0.95rem;">
+              <li style="display:flex; justify-content:space-between;"><span>Monday - Thursday:</span> <strong>10:00 -
+                  21:00</strong></li>
+              <li style="display:flex; justify-content:space-between;"><span>Friday - Saturday:</span> <strong>09:00 -
+                  23:00</strong></li>
+              <li style="display:flex; justify-content:space-between;"><span>Sunday:</span> <strong>09:00 -
+                  20:00</strong></li>
+            </ul>
+          </div>
+
+          <div class="glass-panel" style="padding: 2rem; margin-bottom: 3rem;">
+            <h3 style="margin-bottom: 1rem; font-weight:600;">Follow Us</h3>
+            <div style="display: flex; gap: 1rem;">
+              <a href="#" class="social-icon" aria-label="Facebook"
+                style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid var(--glass-border); color:var(--text-primary); transition:var(--transition); text-decoration:none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram"
+                style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid var(--glass-border); color:var(--text-primary); transition:var(--transition); text-decoration:none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Twitter"
+                style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid var(--glass-border); color:var(--text-primary); transition:var(--transition); text-decoration:none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="glass-panel" style="padding: 3rem;">
+          <h3 style="margin-bottom: 0.5rem; font-weight:600;">Send Us a Message</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Fill out the form below and
+            we will route your inquiry to the correct department.</p>
+
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Jane Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="jane@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <select id="subject" class="form-control">
+                <option>General Support / Tickets</option>
+                <option>Birthday Party Reservation</option>
+                <option>Corporate Events & Group Trips</option>
+                <option>Membership & Billing Help</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea id="message" class="form-control" rows="5" placeholder="Write details here..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Google Map Block -->
+      <div
+        style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--glass-border); height: 400px; position: relative; width: 100%;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115166.70200877995!2d-74.06806584284894!3d40.71261327914441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598c257d0f9d%3A0xc3cf3337a6bca264!2sAction%20Park!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-link">
+          <div class="logo-icon">G</div>
+          <span>GravityForce<span class="logo-dot">.</span></span>
+        </a>
+        <p class="footer-text">GravityForce is a leading sports entertainment park featuring elite trampoline jumps,
+          Ninja obstacles, high-end private birthday party rooms, and group events. Engineered for maximum fun under
+          safety protocols.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Facebook">F</a>
+          <a href="#" class="social-icon" aria-label="Instagram">I</a>
+          <a href="#" class="social-icon" aria-label="Twitter">T</a>
+          <a href="#" class="social-icon" aria-label="YouTube">Y</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About</a></li>
+
+
+          <li><a href="gallery.html" class="footer-link">Photo Gallery</a></li>
+          <li><a href="safety.html" class="footer-link">Safety & Rules</a></li>
+          <li><a href="faq.html" class="footer-link">FAQ Help</a></li>
+          <li><a href="blog.html" class="footer-link">Our Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Attractions</h4>
+        <ul class="footer-links">
+          <li><a href="attractions.html" class="footer-link">Open Jump Arena</a></li>
+          <li><a href="ninja.html" class="footer-link">Ninja Warrior Course</a></li>
+          <li><a href="attractions.html" class="footer-link">Dodgeball Arena</a></li>
+          <li><a href="attractions.html" class="footer-link">Foam Pit Diving</a></li>
+          <li><a href="attractions.html" class="footer-link">Slam Dunk Zones</a></li>
+          <li><a href="attractions.html" class="footer-link">Junior Kids Play</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Contact Information</h4>
+        <div class="footer-contact">
+          <div class="contact-item">
+            <span>📍</span>
+            <span>100 Gravity Heights Blvd,<br>Suite 400, Action City</span>
+          </div>
+          <div class="contact-item">
+            <span>📞</span>
+            <span>(555) 300-JUMP</span>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <span>info@gravityforce.com</span>
+          </div>
+          <div class="contact-item">
+            <span>🕒</span>
+            <span>Mon - Thu: 10:00 - 21:00<br>Fri - Sat: 09:00 - 23:00<br>Sun: 09:00 - 20:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 GravityForce Parks LLC. All rights reserved.</p>
+      <ul class="footer-legal-links">
+        <li><a href="safety.html" class="footer-legal-link">Privacy Policy</a></li>
+        <li><a href="safety.html" class="footer-legal-link">Terms of Service</a></li>
+        <li><a href="safety.html" class="footer-legal-link">Liability Waiver</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Scroll to top">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:24px; height:24px;">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

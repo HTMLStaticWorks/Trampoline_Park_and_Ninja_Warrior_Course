@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attractions | GravityForce</title>
+  <meta name="description"
+    content="Explore the attractions at GravityForce, including the Free Jump Arena, Dodgeball Court, Foam Pit, and Trapeze Swings.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Specific flex layout for center-aligned final row of attractions */
+    .attractions-flex-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .attractions-flex-item {
+      flex: 0 1 calc(33.333% - 1.34rem);
+      min-width: 300px;
+      display: flex;
+    }
+
+    @media (max-width: 1024px) {
+      .attractions-flex-item {
+        flex: 0 1 calc(50% - 1rem);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .attractions-flex-item {
+        flex: 0 1 100%;
+      }
+    }
+  </style>
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta name="keywords" content="trampoline, ninja warrior, birthday party, fun, entertainment">
+  <meta name="author" content="GravityForce">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Sticky Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link" id="logo-nav">
+        <div class="logo-icon">G</div>
+        <span>GravityForce<span class="logo-dot">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="dropdown">
+            <a href="index.html" class="nav-link dropdown-toggle">Home <span class="dropdown-arrow">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="index.html" class="dropdown-item">Home1</a></li>
+              <li><a href="index-2.html" class="dropdown-item">Home2</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="attractions.html" class="nav-link active">Attractions</a></li>
+          <li><a href="ninja.html" class="nav-link">Ninja Course</a></li>
+          <li><a href="parties.html" class="nav-link">Parties</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link ">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions (Theme Toggle, Auth CTA) -->
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle light/dark theme">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.071 7.071 5 5 0 01-7.071-7.071z" />
+          </svg>
+        </button>
+        <button class="rtl-toggle" id="rtlToggleBtn" aria-label="Toggle RTL layout" title="RTL Toggle">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </button>
+        <a href="dashboard.html" class="dashboard-icon" aria-label="Dashboard" title="Dashboard">
+          <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+          </svg>
+        </a>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false" id="hamburgerMenuBtn">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <a href="login.html" class="btn btn-secondary" id="loginBtn">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <nav>
+      <ul class="mobile-nav-menu">
+        <li><a href="index.html" class="mobile-nav-link">Home1</a></li>
+        <li><a href="index-2.html" class="mobile-nav-link">Home2</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="attractions.html" class="mobile-nav-link active">Attractions</a></li>
+        <li><a href="ninja.html" class="mobile-nav-link">Ninja Course</a></li>
+        <li><a href="parties.html" class="mobile-nav-link">Parties</a></li>
+        <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="mobile-nav-link ">Contact</a></li>
+        <li style="display: flex; gap: 1.5rem; align-items: center; margin-top: 1rem;">
+          <button class="theme-toggle" aria-label="Toggle light/dark theme"
+            style="background: none; border: none; color: var(--text-primary); cursor: pointer; padding: 0;">
+            <svg style="width:24px; height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.071 7.071 5 5 0 01-7.071-7.071z" />
+            </svg>
+          </button>
+          <button class="rtl-toggle" aria-label="Toggle RTL layout" title="RTL Toggle"
+            style="background: none; border: none; color: var(--text-primary); cursor: pointer; padding: 0;">
+            <svg style="width:24px; height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          </button>
+          <a href="dashboard.html" class="dashboard-icon" aria-label="Dashboard" title="Dashboard"
+            style="color: var(--text-primary); line-height: 0;">
+            <svg style="width:24px; height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+            </svg>
+          </a>
+        </li>
+        <li style="margin-top: 2rem;"><a href="login.html" class="btn btn-primary"
+            style="display: block; text-align: center;">Login</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Hero Section -->
+  <section
+    style="position: relative; overflow: hidden; padding: 2rem 1rem; background: var(--bg-primary); border-bottom: 1px solid var(--glass-border);">
+    <div class="container text-center" style="position: relative; z-index: 2;">
+      <span class="subheading">GravityForce Arena</span>
+      <h1>Our Action Attractions</h1>
+      <p
+        style="margin-top: 1.5rem; font-size: 1.15rem; max-width: 700px; margin-left: auto; margin-right: auto; color: var(--text-secondary);">
+        Explore the most comprehensive trampoline layout and physical testing grounds in the industry. All reservations
+        include park safety grips.</p>
+    </div>
+  </section>
+
+  <!-- Full Attractions Grid -->
+  <section style="padding: 2rem 1rem;">
+    <div class="container">
+      <div class="attractions-flex-grid">
+
+        <!-- Open Jump Arena -->
+        <div class="attractions-flex-item">
+          <article class="premium-card">
+            <div class="card-img-wrapper">
+              <img src="assets/img/jump-area.jpg" alt="Bounce arena filled with wall-to-wall trampolines"
+                class="card-img">
+              <span class="card-badge">Open Jump</span>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Open Jump Arena</h3>
+              <p class="card-description">Free-jump on our massive grid of interconnected horizontal and vertical
+                trampolines. Perfect for working on acrobatic layouts.</p>
+              <div class="card-footer">
+                <a href="dashboard.html" class="btn btn-primary" style="width: 100%;">Book Session</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Ninja Warrior Course -->
+        <div class="attractions-flex-item">
+          <article class="premium-card">
+            <div class="card-img-wrapper">
+              <img src="assets/img/warrior.jpg" alt="Athletic training facility obstacles" class="card-img">
+              <span class="card-badge">Elite Obstacles</span>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Ninja Warrior Course</h3>
+              <p class="card-description">A professional-grade military obstacle training ground designed to push your
+                upper body, grip strength, and speed limits.</p>
+              <div class="card-footer">
+                <a href="ninja.html" class="btn btn-primary" style="width: 100%;">Explore Course</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Foam Pit -->
+        <div class="attractions-flex-item">
+          <article class="premium-card">
+            <div class="card-img-wrapper">
+              <img src="assets/img/foam-fit.jpg" alt="High speed launch jump diving into foam square blocks"
+                class="card-img">
+              <span class="card-badge">Soft Drop</span>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Foam Pit</h3>
+              <p class="card-description">Practice double flips and layout drops with complete confidence. Launch off
+                high decks into 10,000+ medical foam block cushions.</p>
+              <div class="card-footer">
+                <a href="dashboard.html" class="btn btn-primary" style="width: 100%;">Book Session</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Dodgeball Court -->
+        <div class="attractions-flex-item">
+          <article class="premium-card">
+            <div class="card-img-wrapper">
+              <img src="assets/img/dodgeball.jpg" alt="Sports court play game matches" class="card-img">
+              <span class="card-badge">Team Battle</span>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Dodgeball Court</h3>
+              <p class="card-description">Unleash the speed! Bounce, duck, dive, and throw. Bring a team or join public
+                pick-up matches scheduled hourly on trampolines.</p>
+              <div class="card-footer">
+                <a href="dashboard.html" class="btn btn-primary" style="width: 100%;">Book Session</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Slam Dunk Zone -->
+        <div class="attractions-flex-item">
+          <article class="premium-card">
+            <div class="card-img-wrapper">
+              <img src="assets/img/slam-dunk.jpg" alt="High jump launch action dunking ball in hoop" class="card-img">
+              <span class="card-badge">Air Dunking</span>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Slam Dunk Zone</h3>
+              <p class="card-description">Springboard runways push your jump heights. Perform stylish double-clutches,
+                360 dunks, and capture epic video clips.</p>
+              <div class="card-footer">
+                <a href="dashboard.html" class="btn btn-primary" style="width: 100%;">Book Session</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Kids Zone -->
+        <div class="attractions-flex-item">
+          <article class="premium-card">
+            <div class="card-img-wrapper">
+              <img src="assets/img/kidszone.jpg" alt="Toddler child playing in padded play zone bounce house area"
+                class="card-img">
+              <span class="card-badge">Toddler Safety</span>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Kids Zone</h3>
+              <p class="card-description">A secure trampoline play environment reserved for children ages 6 and under.
+                Complete supervision by designated crew coaches.</p>
+              <div class="card-footer">
+                <a href="dashboard.html" class="btn btn-primary" style="width: 100%;">Book Session</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety Rules Section -->
+  <section
+    style="padding: 2rem 1rem; background-color: var(--bg-secondary); border-top: 1px solid var(--glass-border);">
+    <div class="container text-center">
+      <span class="subheading">Safety First</span>
+      <h2 style="margin-bottom: 1.5rem;">Jump Safely</h2>
+      <p style="margin: 0 auto 2rem auto; color: var(--text-secondary); max-width: 700px; font-size: 1.1rem;">
+        Your safety is our top priority. All jump areas are supervised by our trained court monitors to ensure rules are
+        followed and everyone has a safe, fun experience.
+      </p>
+      <div class="grid-3" style="text-align: left;">
+        <div class="premium-card" style="padding: 1.5rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">1. Grip Socks Required</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">GravityForce grip socks are mandatory on all
+            trampolines to prevent slipping and maintain hygiene.</p>
+        </div>
+        <div class="premium-card" style="padding: 1.5rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">2. One Per Trampoline</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">To avoid collisions and double-bouncing, strictly
+            one jumper is allowed per trampoline square.</p>
+        </div>
+        <div class="premium-card" style="padding: 1.5rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">3. Empty Your Pockets</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">No phones, keys, or sharp objects allowed on the
+            courts. Lockers are available for rent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cafe Section -->
+  <section style="padding: 2rem 1rem; border-top: 1px solid var(--glass-border);">
+    <div class="container grid-2" style="align-items: center;">
+      <div>
+        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--glass-border);">
+          <img src="assets/img/cafe.jpg" alt="Cafe and concessions area"
+            style="width: 100%; aspect-ratio: 4/3; object-fit: cover;">
+        </div>
+      </div>
+      <div>
+        <span class="subheading">Fuel Your Fun</span>
+        <h2 style="margin-bottom: 1.5rem;">Gravity Cafe</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 1.1rem;">
+          Take a break from the action and refuel at the Gravity Cafe. Whether you need a quick energy boost or a full
+          meal, we've got you covered.
+        </p>
+        <ul
+          style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; color: var(--text-secondary);">
+          <li>• Freshly Baked Pizza by the slice or whole pie</li>
+          <li>• Ice-cold fountain drinks and sports hydration</li>
+          <li>• Warm pretzels, nachos, and hot dogs</li>
+          <li>• Premium coffee for parents in the observation lounge</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section
+    style="padding: 2rem 1rem; background-color: var(--bg-secondary); border-top: 1px solid var(--glass-border);">
+    <div class="container text-center">
+      <h2 style="margin-bottom: 1rem;">Ready to Catch Some Air?</h2>
+      <p style="margin: 0 auto 2rem auto; color: var(--text-secondary); max-width: 600px; font-size: 1.1rem;">
+        Secure your jump time in advance to guarantee entry. Walk-ins are subject to availability and park capacity
+        limits.
+      </p>
+      <a href="dashboard.html" class="btn btn-primary" style="margin-right: 1rem; margin-bottom: 1rem;">Book Jump
+        Tickets</a>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-link">
+          <div class="logo-icon">G</div>
+          <span>GravityForce<span class="logo-dot">.</span></span>
+        </a>
+        <p class="footer-text">GravityForce is a leading sports entertainment park featuring elite trampoline jumps,
+          Ninja obstacles, high-end private birthday party rooms, and group events. Engineered for maximum fun under
+          safety protocols.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Facebook">F</a>
+          <a href="#" class="social-icon" aria-label="Instagram">I</a>
+          <a href="#" class="social-icon" aria-label="Twitter">T</a>
+          <a href="#" class="social-icon" aria-label="YouTube">Y</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About</a></li>
+
+
+          <li><a href="gallery.html" class="footer-link">Photo Gallery</a></li>
+          <li><a href="safety.html" class="footer-link">Safety & Rules</a></li>
+          <li><a href="faq.html" class="footer-link">FAQ Help</a></li>
+          <li><a href="blog.html" class="footer-link">Our Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Attractions</h4>
+        <ul class="footer-links">
+          <li><a href="attractions.html" class="footer-link">Open Jump Arena</a></li>
+          <li><a href="ninja.html" class="footer-link">Ninja Warrior Course</a></li>
+          <li><a href="attractions.html" class="footer-link">Dodgeball Arena</a></li>
+          <li><a href="attractions.html" class="footer-link">Foam Pit Diving</a></li>
+          <li><a href="attractions.html" class="footer-link">Slam Dunk Zones</a></li>
+          <li><a href="attractions.html" class="footer-link">Junior Kids Play</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Contact Information</h4>
+        <div class="footer-contact">
+          <div class="contact-item">
+            <span>📍</span>
+            <span>100 Gravity Heights Blvd,<br>Suite 400, Action City</span>
+          </div>
+          <div class="contact-item">
+            <span>📞</span>
+            <span>(555) 300-JUMP</span>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <span>info@gravityforce.com</span>
+          </div>
+          <div class="contact-item">
+            <span>🕒</span>
+            <span>Mon - Thu: 10:00 - 21:00<br>Fri - Sat: 09:00 - 23:00<br>Sun: 09:00 - 20:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 GravityForce Parks LLC. All rights reserved.</p>
+      <ul class="footer-legal-links">
+        <li><a href="safety.html" class="footer-legal-link">Privacy Policy</a></li>
+        <li><a href="safety.html" class="footer-legal-link">Terms of Service</a></li>
+        <li><a href="safety.html" class="footer-legal-link">Liability Waiver</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Scroll to top">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:24px; height:24px;">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
