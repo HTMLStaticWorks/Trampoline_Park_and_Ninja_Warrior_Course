@@ -618,6 +618,28 @@ select:focus-visible {
   transition: var(--transition-fast);
 }
 
+select.form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1.25rem center;
+  background-size: 1.2rem;
+  padding-right: 3rem !important;
+  cursor: pointer;
+}
+
+[data-theme="light"] select.form-control {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='none' stroke='%23111111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+}
+
+[dir="rtl"] select.form-control {
+  background-position: left 1.25rem center;
+  padding-right: 1.25rem !important;
+  padding-left: 3rem !important;
+}
+
 .form-control:focus {
   border-color: var(--secondary);
   background-color: var(--bg-tertiary);
@@ -1272,6 +1294,10 @@ select:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .dashboard-user-card {

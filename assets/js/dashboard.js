@@ -90,8 +90,9 @@ function initDashboardTabs() {
 
   menuLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
       const targetSectionId = link.getAttribute('data-section');
+      if (!targetSectionId) return;
+      e.preventDefault();
       
       // Update links
       menuLinks.forEach(el => el.classList.remove('active'));
